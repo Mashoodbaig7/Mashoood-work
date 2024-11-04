@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mashood glasses assigment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5, #00f4d9);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border: 3px solid #8338ec;
+}
+
+/* Upload Section */
+.upload-section {
+  text-align: center;
+}
+
+.upload-btn {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #00f5c8);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(45deg, #ffbe0b, #fb5607, #8338ec);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-box {
+  margin: 20px 0;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: #f0f0f0;
+  border: 4px dashed #ff006e;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+#uploadedImage{
+  height: 280px;
+  width: 2800px;
+    
+}
+
+ .spectacle-overlay {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Controls */
+.controls {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.control-btn {
+  margin: 10px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #06d6a0, #118ab2, #ef476f);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.control-btn:hover {
+  background: linear-gradient(45deg, #ffd166, #06d6a0, #ff006e);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Spectacles Section */
+.spectacles {
+  text-align: center;
+}
+
+.spectacles h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ff006e;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spectacles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.spectacle-item {
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.spectacle-item:hover {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .image-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .control-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .spectacles-grid {
+    gap: 10px;
+  }
+
+  .spectacle-item {
+    width: 60px;
+  }
+}
+</style>
+<body>
+  <div class="container">
+    <div class="upload-section">
+      <input type="file" id="fileInput" />
+      <button class="upload-btn">Upload your image</button>
+      <div class="image-box" style="display: flex;justify-content: center;align-items: center;">
+        <img id="uploadedImage" src="" alt="Upload your image">
+        <img id="spectaclesImage" src="" alt="Spectacles" class="spectacle-overlay">
+      </div>
+    </div>
+    <div class="controls">
+      <button id="increaseBtn" class="control-btn">Increase Size</button>
+      <button id="decreaseBtn" class="control-btn">Decrease Size</button>
+      <button id="moveLeftBtn" class="control-btn">Move Left</button>
+      <button id="moveRightBtn" class="control-btn">Move Right</button>
+      <button id="moveUpBtn" class="control-btn">Move Up</button>
+      <button id="moveDownBtn" class="control-btn">Move Down</button>
+    </div>
+    <div class="spectacles">
+      <h2>Select Spectacles</h2>
+      <div class="spectacles-grid">
+        <!-- Add spectacle images here -->
+        <img src="Make-a-Cool-Statement-with-Promotional-Sunglasses-removebg-preview.png" class="spectacle-item" alt="Spectacle 2">
+        <img src="download-removebg-preview (1).png" class="spectacle-item" alt="Spectacle 1">
+        <img src="images-removebg-preview (4).png" class="spectacle-item" alt="Spectacle 2">
+        <img src="images-removebg-preview (6).png" class="spectacle-item" alt="Spectacle 2">
+        <img src="images-removebg-preview (7).png" class="spectacle-item" alt="Spectacle 2">
+        <img src="images-removebg-preview (8).png" class="spectacle-item" alt="Spectacle 2">
+        <img src="download-removebg-preview (2).png" class="spectacle-item" alt="Spectacle 2">
+        <img src="images-removebg-preview (10).png" class="spectacle-item" alt="Spectacle 2">
+        <img src="images-removebg-preview (5).png" class="spectacle-item" alt="Spectacle 2">
+        <img src="images-removebg-preview (9).png" class="spectacle-item" alt="Spectacle 2">
+      </div>
+    </div>
+  </div>
+  <script>
+    // Image Upload
+const fileInput = document.getElementById('fileInput');
+const uploadedImage = document.getElementById('uploadedImage');
+fileInput.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  
+  reader.onload = function(e) {
+    uploadedImage.src = e.target.result;
+  };
+  
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+
+// Move Spectacles
+const spectaclesImage = document.getElementById('spectaclesImage');
+let posX = 0, posY = 0, scale = 1;
+
+document.getElementById('increaseBtn').addEventListener('click', function() {
+  scale += 0.1;
+  updateSpectacleTransform();
+});
+
+document.getElementById('decreaseBtn').addEventListener('click', function() {
+  scale -= 0.1;
+  updateSpectacleTransform();
+});
+
+document.getElementById('moveLeftBtn').addEventListener('click', function() {
+  posX -= 10;
+  updateSpectacleTransform();
+});
+
+document.getElementById('moveRightBtn').addEventListener('click', function() {
+  posX += 10;
+  updateSpectacleTransform();
+});
+
+document.getElementById('moveUpBtn').addEventListener('click', function() {
+  posY -= 10;
+  updateSpectacleTransform();
+});
+
+document.getElementById('moveDownBtn').addEventListener('click', function() {
+  posY += 10;
+  updateSpectacleTransform();
+});
+
+function updateSpectacleTransform() {
+  spectaclesImage.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+// Select Spectacles
+const spectacleItems = document.querySelectorAll('.spectacle-item');
+spectacleItems.forEach(item => {
+  item.addEventListener('click', function() {
+    spectaclesImage.src = item.src;
+  });
+});
+
+  </script>
+</body>
+</html>

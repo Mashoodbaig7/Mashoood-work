@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student ID Card Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+</style>
+<body class="bg-gray-100 flex flex-col items-center justify-center   ">
+
+    <nav style="height: 80px;width: 100%;background-color: rgba(23, 20, 173, 0.751);">
+        <h1 style="display: flex;justify-content: center;align-items: center;margin-top: 19px;color: white;font-weight: bold;font-size: 30px;">Student Registration Card</h1>
+    </nav>
+    <br>
+    <img src="https://avatars.githubusercontent.com/u/177483796?v=4" alt="" style="height: 260px;width: 260px;border: 4px blue solid;border-radius: 100%;">
+    <br>
+    <h1>Mashood</h1>
+    <h2>RollNo:265763</h2>
+    
+<br>
+
+  
+
+ 
+ 
+  <style>
+    .barcode {
+      height: 40px;
+      background-image: repeating-linear-gradient(
+        90deg,
+        #000,
+        #000 2px,
+        #fff 2px,
+        #fff 4px
+      );
+    }
+  </style>
+
+
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">
+    <h2 class="text-xl font-semibold mb-6 text-gray-700">Student ID Card Form</h2>
+    
+    <form id="registerForm" class="space-y-4">
+      <input type="text" id="name" placeholder="Name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+      <input type="text" id="idNo" placeholder="ID No" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+      <input type="email" id="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+      <input type="tel" id="phone" placeholder="Type " class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+      <input type="file" id="image" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+      
+      <button type="button" onclick="generateIDCard()" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">Generate ID Card</button>
+      <p>Please when generate id Card Check Below</p>
+    </form>
+  </div>
+<br>
+<br>
+  <div id="idCardFront" class="hidden bg-white rounded-lg shadow-lg w-80 p-6 text-center relative overflow-hidden"  >
+    <div class="bg-blue-600 text-white p-2 rounded-t-lg text-left">
+      <div class="flex items-center space-x-2">
+        <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center">
+          <span class="font-bold text-blue-600 text-xl">M</span>  
+        </div>
+        <span id="displayName" class="font-bold text-xl"></span>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <div id="cardImage" class="w-24 h-24 mx-auto bg-gray-200 rounded-full border-4 border-blue-600 overflow-hidden"></div>
+    </div>
+
+    <h2 class="text-xl font-semibold mt-4" id="displayNameText"></h2>
+    <p class="text-gray-500">Student</p>
+
+    <div class="text-left mt-4 space-y-2">
+      <p><strong>ID No:</strong> <span id="displayIDNo"></span></p>
+      <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+      <p><strong>Phone:</strong><span id="displayPhone"></span></p>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-12 bg-blue-600">
+      <div class="h-3 bg-blue-500 transform skew-x-12"></div>
+    <br>
+    <br>
+    <br>
+
+    </div>
+  </div>
+<br>
+<br>
+<br>
+  <div id="idCardBack" class="hidden bg-white rounded-lg shadow-lg w-80 p-6 text-center relative overflow-hidden">
+    <div class="bg-blue-600 text-white p-2 rounded-t-lg text-left">
+      <div class="flex items-center space-x-2">
+        <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center">
+          <span class="font-bold text-blue-600 text-xl">M</span> <!-- Company Logo Placeholder -->
+        </div>
+        <span class="font-bold text-xl">Mashood International Co.</span>
+      </div>
+    </div>
+
+    <div class="text-left mt-4">
+      <h3 class="text-lg font-semibold">Terms & Conditions</h3>
+      <ul class="list-disc ml-4 text-gray-700 mt-2 space-y-1">
+        <li>Carry the ID card at all times for identification purposes.</li>
+        <li>The ID card is strictly for official use only.</li>
+      </ul>
+
+      <div class="flex justify-between mt-4">
+        <p><strong>Join:</strong> <span>MM/DD/YYYY</span></p>
+        <p><strong>Expire:</strong> <span>MM/DD/YYYY</span></p>
+      </div>
+
+      <div class="barcode mt-4"></div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-12 bg-blue-600">
+      <div class="h-3 bg-blue-500 transform -skew-x-12"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+  <br>
+  <script>
+    function generateIDCard() {
+      const name = document.getElementById("name").value;
+      const idNo = document.getElementById("idNo").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const imageInput = document.getElementById("image");
+      
+      if (imageInput.files && imageInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById("cardImage").style.backgroundImage = `url(${e.target.result})`;
+          document.getElementById("cardImage").style.backgroundSize = "cover";
+          document.getElementById("cardImage").style.backgroundPosition = "center";
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+      }
+
+      document.getElementById("displayName").innerText = name;
+      document.getElementById("displayNameText").innerText = name;
+      document.getElementById("displayIDNo").innerText = idNo;
+      document.getElementById("displayEmail").innerText = email;
+      document.getElementById("displayPhone").innerText = phone;
+
+      document.getElementById("idCardFront").classList.remove("hidden");
+      document.getElementById("idCardBack").classList.remove("hidden");
+    }
+  </script>
+
+ 
+
+
+</body>
+</html>

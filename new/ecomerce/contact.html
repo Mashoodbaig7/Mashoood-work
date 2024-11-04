@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.email{width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;}
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.ps{width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form >
+    <label for="fname">First Name</label>
+    <input type="text" id="fname"  placeholder="Your name.." required>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname"  placeholder="Your last name.." required>
+    <label for="email">Enter Your Email</label>
+    <input type="email" class="email" id="Email"   placeholder="Enter Your email" required>
+    <label for="password">Enter Your Password</label>
+    <input type="password" class="ps" id="ps"   placeholder="Enter Your password" required>
+
+
+    <label for="country">Country</label>
+    <select id="country"  required>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    <option value="Afghanistan">Afghanistan</option>  
+    <option value="Albania">Albania</option>
+    <option value="Algeria">Algeria</option>
+    <option value="Andorra">Andorra</option>
+    <option value="Angola">Angola</option>
+    <option value="Australia">Australia</option>
+    <option value="Austria">Austria</option>
+    <option value="Azerbaijan">Azerbaijan</option>
+    <option value="Kuwait">Kuwait</option>
+    <option value="burkina">Burkina</option>
+    <option value="SouthAfrica">SouthAfrica</option>
+    <option value="Georgia">Georgia</option>
+    <option value="oganda">Oganda</option>
+    <option value="SaudiaArabia">SaudiaArabia</option>
+    <option value="Grenada">Grenada</option>
+    <option value="Japan">Japan</option>
+    <option value="Jamaica">Jamaica</option>
+    <option value="Jordan">Jordan</option>
+    <option value="Iceland">Iceland</option>
+    <option value="Indonesia">Indonesia</option>
+    <option value="Germany">Germany</option>
+    <option value="France">France</option>
+    <option value="Finland">Finland</option>
+    <option value="Italy">Italy</option>
+    <option value="Egypt">Egypt</option>
+    <option value="Azerbaijan">Azerbaijan</option>
+    <option value="srilanka">Srilanka</option>
+    <option value="China">China</option>
+    <option value="Barbados">Barbados</option>
+    <option value="India">India</option>
+    <option value="Palestine">Palestine</option>
+    <option value="united Kingdom">United Kingdom</option>
+    <option value="america">America</option>
+    <option value="Ireland">Ireland</option>
+    <option value="iraq">Iraq</option>
+    <option value="iran">Iran</option>
+    <option value="nambia">Nambia</option>
+    <option value="west indes">WestIndes</option>
+    <option value="Bangladesh">Bangladesh</option>
+    <option value="Pakistan">Pakistan</option>
+    <option value="England">England</option>
+    <option value="Brazil">Brazil</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject"  placeholder="Write something.." style="height:200px;overflow: scroll;"></textarea>
+
+    <input type="submit" value="Submit" id="send">
+  </form>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+   smtplib
+
+sender_email = 'mashoodbaig567@gmail.com'
+password = 'mashood@#12345'
+receiver_email = 'ashfaqnizami123@gmail.com'
+subject = 'List'
+body = 'test body'
+
+server = smtplib.SMTP('smtp.gmail.com',587)
+server.starttls
+server.login(sender_email, password)
+print("login success")
+server.sendmail(sender_email, receiver_email, body)
+print("email has been sent")
+</script>
+</body>
+</html>

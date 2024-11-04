@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomerce amazon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
+
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 0;
+            color: gold;
+            background-color: black;
+        }
+
+       
+
+        /* Container for all cards */
+        #counts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        /* Individual card styling */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 270px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image styling */
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover img {
+            opacity: 0.9;
+        }
+
+        /* Text content styling */
+        .card p {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 15px 15px 5px;
+            color: #333;
+        }
+
+        .card span {
+            display: block;
+            font-size: 16px;
+            color: #007bff;
+            margin: 0 15px 15px;
+        }
+
+         
+        /* Button animation */
+        .card span {
+            display: inline-block;
+            position: relative;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .card span::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #007bff;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .card:hover span {
+            color: #0056b3;
+        }
+
+        .card:hover span::before {
+            width: 100%;
+            left: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+   
+
+<nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700" style="background-color: black;color: gold;position: sticky !important;">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2" style="position: sticky !important;">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img style="height: 100px;width: 130px;border-radius: 20px; background-color: gold; margin-left: 9px;" src="data:image/png;base64,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" class="h-8" alt="Flowbite Logo" />
+      </a>
+      <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg style="color: gold;" class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+        <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+          <li>
+            <a style="color: gold;" href="#" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a style="color: gold;" href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+          </li>
+          <li>
+            <a style="color: gold;" href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a style="color: gold;" href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+
+    <div id="counts"></div>
+
+    <footer  style="background-color: black; height: 73vh;">
+        <br />
+          <img style="margin-left: 19px; height: 100px;width: 130px;border-radius: 20px; background-color: #f9fafb;" src="data:image/png;base64,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" class="h-8" alt="Flowbite Logo" />
+          <br />
+          
+          <ul style="margin-left: 10px;margin-top: 30px;padding-top: 0px;flex-direction: column;" class="    md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+            <li>
+                <a style="color:gold;padding: 6px;margin-left:20px;" href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+            </li>
+            <li>
+                <a style="color:gold;padding: 6px;margin-left:20px;" href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+            </li>
+            <li>
+                <a style="color:gold;padding: 6px;margin-left:20px;" href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+            </li>
+            <li>
+                <a style="color:gold;padding: 6px;margin-left:20px;" href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+            </li>
+        </ul>
+        <br />
+        <hr style="background-color: rgb(235, 232, 232);" />
+        <div style="display: flex; color: goldenrod;margin-left: 5px;margin-top: 7px;">
+        <p style="margin-left: 14px;">Blog</p>
+        <p style="margin-left: 14px;">Github</p>
+        <p style="margin-left: 14px;">Discord</p>
+         
+
+</div>
+<br />
+<div style="margin-left: 10px;">
+<h3 style="color: gold;display: flex;">For Contact</h3>
+<h5>Qasimabad.Karachi,Pakistan</h5>
+ <h2 style="display: flex;">   <br />
+    <br />
+    <a href="mailto:mashoodbaig567@gmail.com">mashoodbaig567@gmail.com</a></h2>
+    <center>&copy;All copy rights resvered from Mashood</center>
+</div>
+ 
+
+
+     </footer >
+
+    <script>
+        var divTag = document.getElementById("counts");
+
+        fetch('https://dummyjson.com/products/search?q=phone')
+            .then(res => res.json())
+            .then(data => {
+                if (data.products && Array.isArray(data.products)) {
+                    data.products.forEach(item => {
+                        divTag.innerHTML += `
+                          <div class="card">
+                            <img src="${item.thumbnail}" alt="${item.title}" />
+                            <center>
+                            <h3  class="car" style="" >${item.title}</h3>
+                            </center>
+                            <center>
+                              <h5  style="font-size:20px;" >${item.brand}</h5>
+                              </center>
+                            <span>Rs.${item.price}</span>
+                            
+                          </div>`;
+                          console.log(data,item);
+                          
+                    });
+                } else {
+                    console.error('No products found or invalid data structure');
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+</body>
+
+</html>

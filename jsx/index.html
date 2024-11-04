@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Resume</title>
+ </head>
+ <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.resume-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.name-title h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.name-title h3 {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.contact-info {
+  text-align: right;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 20px 0;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.skills ul, .experience ul {
+  list-style-type: none;
+}
+
+.skills ul li, .experience ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.experience .job {
+  margin-bottom: 20px;
+}
+
+.education p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+}
+
+ </style>
+<body>
+
+  <div class="resume-container">
+    <header>
+      <div class="profile">
+        <img src="mas.png" alt="Your Photo" class="profile-img">
+        <div class="name-title">
+          <h1>Mashood Baig</h1>
+          <h3>Front-End Developer</h3>
+        </div>
+      </div>
+      <div class="contact-info">
+        <p>Email: mashoodbaig567@example.com</p>
+        <p>Phone: +92 3111214350</p>
+        Website:<a href="https://solarmashood.netlify.app">www.Mashood-project.com</a>
+      </div>
+    </header>
+
+    <section class="summary">
+      <h2>Summary</h2>
+      <p>Front-end developer with 5+ years of experience building responsive and visually appealing web applications. Adept at working with modern frameworks such as React, Tailwind CSS, and JavaScript.</p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <img src="https://camo.githubusercontent.com/cdca02fbe108ee88ed1cee57cd0fcb5119f1a55ff12d98d6efec4c927da8bd62/68747470733a2f2f736b696c6c69636f6e732e6465762f69636f6e733f693d72656163742c6e6578746a732c66697265626173652c6e6f64656a732c61706f6c6c6f2c6772617068716c2c6d6f6e676f64622c657870726573732c6a732c74732c72656475782c736173732c666c75747465722c626f6f7473747261702c6d6174657269616c75692c6e65746c6966792c6373732c68746d6c" alt="">
+      <br />
+      <ul>
+        <li>HTML5 & CSS3</li>
+        <li>JavaScript (ES6+)</li>
+        <li>React.js & Next.js</li>
+        <li>Tailwind CSS</li>
+        <li>Responsive Web Design</li>
+        <li>Version Control (Git & GitHub)</li>
+        <li>Cross-browser Compatibility</li>
+      </ul>
+    </section>
+
+    <section class="experience">
+      <h2>Experience</h2>
+      <div class="job">
+        <h3>Front-End Developer | Tech Innovations</h3>
+        <p><strong>Jan 2021 - Present</strong></p>
+        <ul>
+          <li>Developed and maintained responsive websites, ensuring cross-browser compatibility.</li>
+          <li>Integrated user-friendly interfaces using React.js and Tailwind CSS.</li>
+          <li>Optimized web performance, improving load times by 20%.</li>
+          <li>Collaborated with designers to create intuitive UX/UI designs.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Junior Front-End Developer | MashoodCodeDev.</h3>
+        <p><strong>Jan 2018 - Dec 2020</strong></p>
+        <ul>
+          <li>Assisted in the development of responsive websites using HTML, CSS, and JavaScript.</li>
+          <li>Worked on SEO and website performance improvements.</li>
+          <li>Collaborated with senior developers to deliver high-quality code and designs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+       <p><strong>Certifications:</strong> Responsive Web Design (SMIT), JavaScript Algorithms and Data Structures (SMIT)</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

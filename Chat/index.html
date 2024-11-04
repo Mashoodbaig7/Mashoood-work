@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>.custom-button {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 0.75rem; /* p-3 */
+    font-size: 1.25rem; /* text-xl */
+    margin-left: 0.5rem; /* ml-2 */
+    padding-left: 2.5rem; /* px-10 */
+    padding-right: 2.5rem; /* px-10 */
+    border-radius: 0.375rem; /* rounded-md */
+    border: 3px solid gold; /* Black border */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: goldenrod; 
+    color: white; 
+    border: 1px solid black; /* Keep black border */
+}
+</style>
+<body>
+    <nav class="bg-black h-[10vh] w-full flex pl-10 items-center " style="color:  gold;">
+        <center>
+        <h1 class="text-2xl font-bold" style="display: flex;justify-content: center;align-items: center;">Chat App</h1>
+    </center>
+    </nav>
+
+    <div id="messages" class="h-[82vh] w-full   flex flex-col"  style="background-color: rgb(28, 26, 26);color: gold;font-size: 20px;"></div>
+
+    <footer class="bg-teal-200 h-[8vh] w-full flex justify-center items-center" style="background-color: black;color: gold;font-size: 20px;">
+        <input type="text" id="msg" placeholder="Type Message" class="rounded-md border border-black w-[70vw] p-3 text-xl">
+        <button onclick="handleSend()" class="custom-button">Send</button>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

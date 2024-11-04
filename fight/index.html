@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modern Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Lobster">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat", sans-serif;
+      }
+      .w3-sidebar {
+        width: 140px;
+        background: linear-gradient(45deg, #2c3e50, #4ca1af);
+      }
+      #main {
+        margin-left: 140px;
+        transition: margin-left 0.3s;
+      }
+      @media only screen and (max-width: 600px) {
+        #main {
+          margin-left: 0;
+        }
+      }
+      /* Improved styling for the content */
+      header {
+        background: linear-gradient(to right, #4ca1af, #c4e0e5);
+        color: #fff;
+        text-align: center;
+        padding: 60px 0;
+      }
+      header h1 {
+        font-family: 'Lobster', cursive;
+        font-size: 3.5rem;
+      }
+      .w3-text-grey {
+        color: #ddd !important;
+      }
+      .w3-text-light-grey {
+        color: #c4e0e5 !important;
+      }
+      .w3-content {
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .w3-row-padding img {
+        border-radius: 8px;
+        transition: transform 0.2s;
+      }
+      .w3-row-padding img:hover {
+        transform: scale(1.05);
+      }
+      /* Button styling */
+      .w3-button {
+        background: #4ca1af;
+        border: none;
+        color: white;
+        transition: background 0.3s;
+      }
+      .w3-button:hover {
+        background: #2c3e50;
+      }
+      /* Pricing tables */
+      .w3-ul {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .w3-dark-grey {
+        background: #2c3e50 !important;
+      }
+      /* Footer styling */
+      footer {
+        background: #111;
+        padding: 30px;
+        text-align: center;
+      }
+      footer i {
+        margin: 0 10px;
+        color: #c4e0e5;
+      }
+      footer i:hover {
+        color: #4ca1af;
+      }
+    </style>
+  </head>
+  <body class="w3-black">
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+      <img src="mas.png" style="width:100%">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+      </a>
+      <a href="#about" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+      </a>
+      <a href="#photos" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>PHOTOS</p>
+      </a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>CONTACT</p>
+      </a>
+    </nav>
+
+    <!-- Main content -->
+    <div class="w3-padding-large" id="main">
+      <!-- Header -->
+      <header class="w3-container w3-center" id="home">
+        <h1>I'm John Doe</h1>
+        <p>Photographer & Web Designer</p>
+        <img src="mas.png" alt="John Doe" class="w3-image w3-circle" width="250">
+      </header>
+
+      <!-- About Section -->
+      <div class="w3-content w3-padding-64" id="about">
+        <h2 class="w3-text-light-grey">About Me</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum lacinia ex non tempor.</p>
+
+        <h3 class="w3-padding-16 w3-text-light-grey">Skills</h3>
+        <p class="w3-wide">Photography</p>
+        <div class="w3-white">
+          <div class="w3-dark-grey" style="width:95%; height:28px;"></div>
+        </div>
+        <p class="w3-wide">Web Design</p>
+        <div class="w3-white">
+          <div class="w3-dark-grey" style="width:85%; height:28px;"></div>
+        </div>
+        <p class="w3-wide">Photoshop</p>
+        <div class="w3-white">
+          <div class="w3-dark-grey" style="width:80%; height:28px;"></div>
+        </div>
+      </div>
+
+      <!-- Portfolio Section -->
+      <div class="w3-content w3-padding-64" id="photos">
+        <h2 class="w3-text-light-grey">My Photos</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="https://www.w3schools.com/w3images/wedding.jpg" style="width:100%">
+            <img src="https://www.w3schools.com/w3images/rocks.jpg" style="width:100%">
+          </div>
+          <div class="w3-half">
+            <img src="https://www.w3schools.com/w3images/underwater.jpg" style="width:100%">
+            <img src="https://www.w3schools.com/w3images/chef.jpg" style="width:100%">
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="w3-content w3-padding-64" id="contact">
+        <h2 class="w3-text-light-grey">Contact Me</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <form action="/action_page.php">
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required></p>
+          <p><textarea class="w3-input w3-padding-16" placeholder="Message" required></textarea></p>
+          <p>
+            <button class="w3-button w3-padding-large" type="submit">
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+          </p>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </footer>
+    </div>
+  </body>
+</html>

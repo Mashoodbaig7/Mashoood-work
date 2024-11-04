@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Position Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f4f8;
+      font-family: 'Inter', sans-serif;
+    }
+
+    #tracker {
+      /* Animations for smoother movement */
+      transition: transform 0.1s ease-in-out, background-color 0.2s ease-in-out;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    #tracker:hover {
+      /* Change color on hover */
+      background-color: #e74c3c; /* Bright red */
+    }
+
+    /* Style for X and Y text */
+    #xPos, #yPos {
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+    }
+
+    /* Add a nice glow effect around the tracker */
+    #tracker {
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      background: radial-gradient(circle, rgba(231, 76, 60, 1) 0%, rgba(192, 57, 43, 1) 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The tracker div -->
+  <div id="tracker" class="relative w-24 h-24 rounded-full bg-red-800 flex flex-col items-center justify-center">
+    <div id="xPos" class="text-lg text-white">X: 0</div>
+    <div id="yPos" class="text-lg text-white">Y: 0</div>
+  </div>
+
+  <script> 
+    document.addEventListener('mousemove', handleMouse);
+
+    const xPos = document.getElementById('xPos');
+    const yPos = document.getElementById('yPos');
+    const tracker = document.getElementById('tracker');
+
+    function handleMouse(event) {
+      // Update X and Y coordinates inside the div
+      xPos.innerHTML = `X: ${event.clientX}`;
+      yPos.innerHTML = `Y: ${event.clientY}`;
+      
+      // Position the div according to the mouse position
+      tracker.style.position = 'absolute';
+      tracker.style.top = `${event.clientY - 45}px`; // Adjusting to center the div
+      tracker.style.left = `${event.clientX - 45}px`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #eaeaea;
+  }
+  
+  .fan-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .fan {
+    width: 200px;
+    height: 200px;
+    background: url('https://hatobachofan.vercel.app/blades.png') no-repeat center;
+    background-size: contain;
+    border-radius: 50%;
+    animation: spin 2s linear infinite; /* Default to 2s */
+    animation-play-state: paused; /* Paused initially */
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .start {
+    background-color: green;
+    color: white;
+  }
+  
+  .stop {
+    background-color: red;
+    color: white;
+  }
+  
+  .speed {
+    background-color: grey;
+    color: white;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
